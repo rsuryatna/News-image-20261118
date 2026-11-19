@@ -1,15 +1,19 @@
-// news-image-20261118, entry 2: write the day's front page to /output/entry.png.
+// news-image-20261118, entry 3: write the day's front page to /output/entry.png.
 //
-// The poster (Wednesday 18 November 2026: 38 stories on one page - the
-// Shenzhen summit track, the Gulf strikes, Voyager 1's one-light-day
-// crossing, Cyclone Akvan, the EU's Ukraine loan and the Jeffries vote,
-// plus a dotted world map, a stat strip and a date-check box, all drawn
-// once with PIL) is stored in image-data.ts as a single base64 line.
-// This launcher only decodes it and writes it out, using the Node
-// standard library alone and no network, so two runs always produce the
-// same bytes. Entry 2 replaces entry 1's six-story page: the date check
-// now keeps Tuesday 17 November news (Nvidia's results, the Alaska
-// Senate call) off the page entirely.
+// The poster (Wednesday 18 November 2026: 52 stories on one page — sixteen
+// featured stories with original PIL drawings, a UTC timeline, region and
+// field strips, a dotted world map, a six-number stat strip, a verification
+// legend and a date-check box naming the Tuesday 17 November stories left
+// off the page, plus a "not yet" line) is stored in image-data.ts as a
+// single base64 line. This launcher only decodes it and writes it out,
+// using the Node standard library alone and no network, so two runs always
+// produce the same bytes. Entry 3 replaces entry 2's 38-story page: the
+// story count rises to 52, five briefs are promoted to featured drawings,
+// and the timeline, field strip, verification legend and "not yet" line
+// are new. The six excluded Tuesday stories (Nvidia's results, the Alaska
+// Senate call, the Board of Peace's Gaza report, the Knesset speaker vote,
+// Mongolia's president's offer to quit, the Kerch Bridge collapse) never
+// appear as stories on the page.
 import { Buffer } from "node:buffer";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
