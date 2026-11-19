@@ -1,11 +1,15 @@
-// news-image-20261118: write the day's front page to /output/entry.png.
+// news-image-20261118, entry 2: write the day's front page to /output/entry.png.
 //
-// The poster (Wednesday 18 November 2026: the Shenzhen summit track, the
-// Gulf strikes, the US Senate result, Nvidia's record quarter, the Ebola
-// emergency and Cyclone Xavier, drawn once with PIL) is stored in
-// image-data.ts as a single base64 line. This launcher only decodes it
-// and writes it out, using the Node standard library alone and no network,
-// so two runs always produce the same bytes.
+// The poster (Wednesday 18 November 2026: 38 stories on one page - the
+// Shenzhen summit track, the Gulf strikes, Voyager 1's one-light-day
+// crossing, Cyclone Akvan, the EU's Ukraine loan and the Jeffries vote,
+// plus a dotted world map, a stat strip and a date-check box, all drawn
+// once with PIL) is stored in image-data.ts as a single base64 line.
+// This launcher only decodes it and writes it out, using the Node
+// standard library alone and no network, so two runs always produce the
+// same bytes. Entry 2 replaces entry 1's six-story page: the date check
+// now keeps Tuesday 17 November news (Nvidia's results, the Alaska
+// Senate call) off the page entirely.
 import { Buffer } from "node:buffer";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
